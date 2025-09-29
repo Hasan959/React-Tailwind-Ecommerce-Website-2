@@ -1,7 +1,8 @@
 import { MapPin } from 'lucide-react'
 import React from 'react'
 import { FaCaretDown } from 'react-icons/fa'
-import { Link } from 'react-router'
+import { IoCartOutline } from 'react-icons/io5'
+import { Link, NavLink } from 'react-router'
 
 const Navbar = () => {
   const location = false
@@ -21,12 +22,16 @@ const Navbar = () => {
           {/* menu section */}
           <nav>
             <ul className='flex gap-7 items-center text-xl font-semibold'>
-              <li>Home</li>
-              <li>Products</li>
-              <li>About</li>
-              <li>Contact</li>
+              <NavLink to={'/'} className={({isActive})=> `${isActive ? "border-b-3 transition-all border-red-500":"text-black"} cursor-pointer`} ><li>Home</li> </NavLink>
+              <NavLink to={'/products'} className={({isActive})=>`${isActive ? "border-b-3 transition-all border-red-500" : "text-black"} cursor-pointer`}><li>Products</li></NavLink>
+              <NavLink to={'/about'} className={({isActive})=> `${isActive ? "border-b-3 transition-all border-red-500" : "text-black"} cursor-pointer`}><li>About</li></NavLink>
+              <NavLink to={'/contact'} className={({isActive})=> `${isActive ? "border-b-3 transition-all border-red-500" : "text-black" } cursor-pointer`}><li>Contact</li></NavLink>
             </ul>
           </nav>
+          <Link to={'/cart'}>
+            <IoCartOutline className='h-7 w-7'/>
+            <span className='bg-red-500 px-2 rounded-full absolute' >0</span>
+          </Link>
         </div>
     </div>
   )
