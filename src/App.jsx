@@ -9,6 +9,9 @@ import Cart from './pages/Cart'
 import Navbar from './components/Navbar'
 
 const App = () => {
+  const getLocation = async () =>{
+    
+  }
   return (
     <BrowserRouter>
     <Navbar/>
