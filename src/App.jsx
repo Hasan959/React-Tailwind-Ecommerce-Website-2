@@ -10,6 +10,9 @@ import Navbar from './components/Navbar'
 
 const App = () => {
   const getLocation = async () =>{
+    navigator.geolocation.getCurrentPosition(pos => {
+      
+    })
     
   }
   return (
