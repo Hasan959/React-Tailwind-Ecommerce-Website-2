@@ -1,5 +1,5 @@
 import React from 'react'
-
+//about section
 const About = () => {
   return (
     <div>About</div>
