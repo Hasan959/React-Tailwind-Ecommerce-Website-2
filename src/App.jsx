@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route }  from 'react-router'
 import Home from './pages/Home'
 import Products from './pages/Products'
@@ -11,10 +11,14 @@ import Navbar from './components/Navbar'
 const App = () => {
   const getLocation = async () =>{
     navigator.geolocation.getCurrentPosition(pos => {
-      
+      const {latitude, longitude} = pos.coords
+      console.log(latitude,longitude);
     })
     
   }
+  useEffect(()=>{
+    getLocation()
+  },[])
   return (
     <BrowserRouter>
     <Navbar/>
