@@ -12,7 +12,7 @@ export const DataProvider = ({children}) =>{
         try {
              const res = await axios.get('https://fakestoreapiserver.reactbd.org/api/products')
              console.log(res)
-             const productsData = res.data.products
+             const productsData = res.data.data
              setData(productsData)
         } catch (error) {
             console.log(error);
