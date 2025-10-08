@@ -1,5 +1,5 @@
 import axios from "axios";
-import { children, createContext, useState } from "react";
+import { children, createContext, useContext, useState } from "react";
 
 export const DataContext = createContext(null);
 
@@ -11,7 +11,7 @@ export const DataProvider = ({children}) =>{
      const fetchAllProducts = async () => {
         try {
              const res = await axios.get('https://fakestoreapiserver.reactbd.org/api/products')
-             console.log(res)
+             //console.log(res)
              const productsData = res.data.data
              setData(productsData)
         } catch (error) {
@@ -22,3 +22,5 @@ export const DataProvider = ({children}) =>{
         {children}
     </DataContext.Provider>
 }
+
+export const getData = ()=> useContext(DataContext)
