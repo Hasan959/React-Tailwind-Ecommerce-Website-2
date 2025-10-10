@@ -36,7 +36,7 @@ const App = () => {
   useEffect(()=>{
     getLocation()
   },[])
-
+//Routing path setting
   return (
     <BrowserRouter>
     <Navbar location={location} getLocation={getLocation} openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} />
