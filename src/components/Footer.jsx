@@ -46,7 +46,7 @@ const Footer = () => {
             <div>
               <h3 className='text-xl font-semibold'>Stay in the Loop</h3>
               <p className='mt-2 text-sm'> Subscribe to get special offers, free giveaways, and more </p>
-              <form action="">
+              <form action="" className='mt-4 flex'>
                 <input 
                 type="email"
                 placeholder='your email address'
@@ -57,11 +57,12 @@ const Footer = () => {
               </form>
             </div> 
 
+        </div>
+        
             {/* bottom section    */}
-            <div className='mt-8 border-t border-gray-700 pt-6 text-center text-sm'>
+            <div className='mt-8  border-t border-gray-700 pt-6 text-center text-sm'>
               <p>&copy;{new Date().getFullYear()} <span className='text-red-500'> Nahar </span> All right reserved </p>
             </div>
-        </div>
 
     </footer>
   )
