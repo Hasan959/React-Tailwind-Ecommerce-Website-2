@@ -16,7 +16,7 @@ const App = () => {
 
 
   const getLocation = async ()=>{
-    navigator.geolocation.getCurrentPosition(async pos => {
+    navigator.geolocation.getCurrentPosition(async pos=> {
       const {latitude, longitude} = pos.coords
       //console.log(latitude,longitude);
 
@@ -28,8 +28,9 @@ const App = () => {
       setLocation(exactLocation)
       setOpenDropdown(false)
       //console.log(exactLocation);
+
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
     })
 
@@ -40,7 +41,7 @@ const App = () => {
 //Routing path setting
   return (
     <BrowserRouter>
-    <Navbar location={location} getLocation={getLocation} openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} />
+    <Navbar location={location} getLocation={getLocation} openDropdown={openDropdown} setOpenDropdown={setOpenDropdown}/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/products'element={<Products/>}></Route>

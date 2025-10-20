@@ -22,17 +22,19 @@ const Products = () => {
           data?.length > 0 ? (
             <div className='flex gap-8'>
               <FilterSection/>
-              <div>
+
+              <div className='grid grid-cols-3 gap-5 mt-10'>
                 {
-                  data?.map((Products,index)=> {
-                    return <ProductCard key={index} />
+                  data?.map((product,index)=> {
+                    return <ProductCard key={index} product={product} />
+                    
                   })
 
                 }
               </div>
 
             </div>
-          ): (
+          ) : (
             <div className='flex items-center justify-center h-[500px] '>
               <video muted autoPlay loop >
                 <source src={Loading} type='video/webm'/>
