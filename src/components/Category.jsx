@@ -1,25 +1,11 @@
-import React, { useEffect } from 'react'
+
 import {  getData } from '../context/DataContext'
 //useContext use from DataContext.jsx
 //category.jsx show in carousel.jsx component
 const Category = () => {
-    const {data, fetchAllProducts} = getData()
+    const { categoryOnlyData} = getData()
 
-    const getUniqueCategory = (data, property) => {
-      let newVa1 = data?.map((curElem) =>{
-        return curElem[property]
-      })
-      newVa1 = [...new Set(newVa1)]
-      return newVa1
-    }
-
-    const categoryOnlyData = getUniqueCategory(data,"category")
-    console.log(categoryOnlyData);
-
-    useEffect(()=>{
-      fetchAllProducts()
-    },[])
-    
+    //women,men, kids button
   return (
     <div className='bg-[#101829]'>
       <div className='max-w-7xl mx-auto flex  gap-4 items-center justify-around  py-7 px-4'>
