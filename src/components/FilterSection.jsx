@@ -1,13 +1,13 @@
 import React from 'react'
 import { getData } from '../context/DataContext'
-
-const FilterSection = () => {
+//category,brand & price range section data set
+const FilterSection = ({search, setSearch, category, setCategory, brand, setBrand, priceRange, setPriceRange }) => {
   const { categoryOnlyData,brandOnlyData} = getData()
   return (
     <div className='bg-gray-100 mt-10 p-4 rounded-md h-max '>
         <input type="text" placeholder='search..' className='bg-white p-2 rounded-md border-gray-400 border-2' />
 
-        {/* category only data  */}
+        {/* category section data set */}
         <h1 className='mt-5 font-semibold text-xl' > Category </h1>
         <div className='flex flex-col gap-2 mt-3'>
           {
@@ -26,12 +26,19 @@ const FilterSection = () => {
           
             {
             brandOnlyData?.map((item,index)=>{
-              return <option key={index}value={item} > {item} </option>
+              return <option key={index}value={item} > {item.toUpperCase()} </option>
             })
-            
             }
-          
         </select>
+
+        {/* price range */}
+        <h1 className='mt-5 font-semibold text-xl mb-3'> Price Range </h1>
+        <div>
+          <label htmlFor=""> Price Range: $0 - $500 </label>
+          <input type="range" name='' id='' />
+        </div>
+        <button className='bg-red-500 text-white rounded-md px-3 py-1 mt-5 cursor-pointer'> Reset Filters </button>
+
 
     </div>
   )

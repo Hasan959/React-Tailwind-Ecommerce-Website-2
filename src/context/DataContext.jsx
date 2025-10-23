@@ -20,11 +20,11 @@ export const DataProvider = ({children}) =>{
      }
 
      const getUniqueCategory = (data, property) => {
-           let newVa1 = data?.map((curElem) =>{
+           let newVal = data?.map((curElem) =>{
              return curElem[property]
            })
-           newVa1 = ["All",...new Set(newVa1)]
-           return newVa1
+           newVal = ["All",...new Set(newVal)]
+           return newVal
          }
      
          const categoryOnlyData = getUniqueCategory(data,"category")
