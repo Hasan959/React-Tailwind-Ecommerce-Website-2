@@ -13,10 +13,24 @@ const Products = () => {
   const [category, setCategory] = useState("All")
   const [brand, setBrand] = useState("All")
   const [priceRange, setPriceRange] = useState([0,5000])
+  
   useEffect(()=>{
     fetchAllProducts()
   },[])
-  
+
+  const handleCategoryChange =(e)=> {
+    setCategory(e.target.value)
+    //console.log(category)
+  }
+  const handleBrandChange =(e)=> {
+    setBrand(e.target.value)
+    
+  }
+
+   const filteredData = data?.filter((item)=> item.title.toLowerCase().includes(search.toLowerCase()) && (category === "All" || item.category === category) &&
+    (brand === "All" || item.brand === brand) &&
+     item.price >= priceRange[0] && 
+     item.price <= priceRange[1])
   
 
   return (
@@ -25,12 +39,12 @@ const Products = () => {
         {
           data?.length > 0 ? (
             <div className='flex gap-8'>
-              <FilterSection search={search} setSearch ={setSearch} category={category} setCategory={setCategory} brand={brand} setBrand={setBrand} priceRange={priceRange} setPriceRange={setPriceRange}  />
+              <FilterSection search={search} setSearch ={setSearch} category={category} setCategory={setCategory} brand={brand} setBrand={setBrand} priceRange={priceRange} setPriceRange={setPriceRange} handleCategoryChange={handleCategoryChange} handleBrandChange={handleBrandChange}/>
 
               <div className='grid grid-cols-3 gap-5 mt-10'>
                 {/* all data get from props product={product} */}
                 {
-                  data?.map((product,index)=> {
+                  filteredData?.map((product, index)=> {
                     return <ProductCard key={index} product={product} />
                     
                   })

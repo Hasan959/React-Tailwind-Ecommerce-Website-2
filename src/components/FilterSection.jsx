@@ -1,7 +1,7 @@
 import React from 'react'
 import { getData } from '../context/DataContext'
 //search,category,brand & price range section data set
-const FilterSection = ({search, setSearch, category, setCategory, brand, setBrand, priceRange, setPriceRange }) => {
+const FilterSection = ({search, setSearch, category,setCategory, brand, setBrand, priceRange, setPriceRange,handleCategoryChange, handleBrandChange }) => {
   const { categoryOnlyData,brandOnlyData} = getData()
   return (
     <div className='bg-gray-100 mt-10 p-4 rounded-md h-max '>
@@ -15,9 +15,9 @@ const FilterSection = ({search, setSearch, category, setCategory, brand, setBran
         <h1 className='mt-5 font-semibold text-xl' > Category </h1>
         <div className='flex flex-col gap-2 mt-3'>
           {
-            categoryOnlyData?.map((item,index)=> {
+            categoryOnlyData?.map((item, index)=> {
               return <div key={index} className='flex gap-2 '>      
-                <input type="checkbox" name={item} checked={category===item} value={item} onChange={(e)=>setCategory(e.target.value)}  />
+                <input type="checkbox" name={item} checked={category === item} value={item} onChange={handleCategoryChange}  />
                 {/* category all item button(all,women,men,kids) */}
                 <button className='cursor-pointer uppercase'> {item} </button>
               </div>
@@ -27,11 +27,11 @@ const FilterSection = ({search, setSearch, category, setCategory, brand, setBran
 
         {/* brand only data */}
         <h1 className='mt-5 font-semibold text-xl mb-3' > Brand </h1>
-        <select name="" id="" className='bg-white w-full p-2 border-gray-200  rounded-md ' value={brand} >
+        <select name="" id="" className='bg-white w-full p-2 border-gray-200  rounded-md' value={brand} onChange={handleBrandChange} >
           
             {
-            brandOnlyData?.map((item,index)=>{
-              return <option key={index}value={item} > {item.toUpperCase()} </option>
+            brandOnlyData?.map((item, index)=>{
+              return <option key={index} value={item} > {item.toUpperCase()} </option>
             })
             }
         </select>
@@ -44,7 +44,7 @@ const FilterSection = ({search, setSearch, category, setCategory, brand, setBran
           
         </div>
         
-        <button className='bg-red-500 text-white rounded-md px-3 py-1 mt-5 cursor-pointer'> Reset Filters </button>
+        <button className='bg-red-500 text-white rounded-md px-3 py-1 mt-5 cursor-pointer' > Reset Filters </button>
 
 
     </div>
