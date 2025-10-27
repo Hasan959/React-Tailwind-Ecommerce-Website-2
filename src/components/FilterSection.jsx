@@ -1,6 +1,6 @@
 import React from 'react'
 import { getData } from '../context/DataContext'
-//search,category,brand & price range section data set
+//FilterSection distructure from Products.jsx component
 const FilterSection = ({search, setSearch, category,setCategory, brand, setBrand, priceRange, setPriceRange,handleCategoryChange, handleBrandChange }) => {
   const { categoryOnlyData,brandOnlyData} = getData()
   return (
@@ -41,7 +41,7 @@ const FilterSection = ({search, setSearch, category,setCategory, brand, setBrand
         <h1 className='mt-5 font-semibold text-xl mb-3'> Price Range </h1>
         <div>
           <label htmlFor=""> Price Range: ${priceRange[0]} - ${priceRange[1]} </label>
-          <input type="range" min='0' max='200' name='' id='' value={priceRange[1]} onChange={(e)=>setPriceRange([priceRange[0],Number(e.target.value )])}/>
+          <input type="range" min='0' max='1000' name='' id='' value={priceRange[1]} onChange={(e)=>setPriceRange([priceRange[0],Number(e.target.value )])}/>
           
         </div>
         

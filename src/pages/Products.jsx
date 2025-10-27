@@ -13,7 +13,7 @@ const Products = () => {
   const [search, setSearch] = useState("")
   const [category, setCategory] = useState("All")
   const [brand, setBrand] = useState("All")
-  const [priceRange, setPriceRange] = useState([0,200])
+  const [priceRange, setPriceRange] = useState([0,1000])
   const [page, setPage] = useState(1)
   
   useEffect(()=>{
@@ -51,16 +51,28 @@ const Products = () => {
             <div className='flex gap-8'>
               <FilterSection search={search} setSearch ={setSearch} category={category} setCategory={setCategory} brand={brand} setBrand={setBrand} priceRange={priceRange} setPriceRange={setPriceRange} handleCategoryChange={handleCategoryChange} handleBrandChange={handleBrandChange}/>
 
-              <div className='grid grid-cols-3 gap-5 mt-10'>
-                {/* all data get from props product={product} */}
+              {
+                filteredData?.length > 0 ?(
+                  <div className='flex flex-col justify-center-safe'> 
+                    <div className='grid grid-cols-3 gap-5 mt-10'>
                 {
                   filteredData?.slice(page * 6 - 6,page *6).map((product, index)=>{
                     return <ProductCard key={index} product={product} />
                   })
                 }
-              </div>
+                   </div>
+                   <Pagination pageHandler={pageHandler}  page={page} dynamicPage={dynamicPage}/>
+
+                </div>
+                  
+                ) : ( 
+                  <div></div>
+                 )
+              }
+
+              
             </div>
-             <Pagination pageHandler={pageHandler}  page={page} dynamicPage={dynamicPage}/>
+             
 
             </>
             
