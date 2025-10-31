@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Loading from "../assets/Loading4.webm"
 import Breadcrums from "../components/Breadcrums";
+import { IoCartOutline } from "react-icons/io5";
 
 const SingleProduct = () => {
   const { id } = useParams(); // URL থেকে id নিচ্ছি
@@ -31,7 +32,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     getSingleProduct();
-  }, []);
+  },[]);
 
   // const OriginalPrice = Math.round(singleProduct.price +(singleProduct.price * singleProduct.discount / 100) )
 
@@ -58,24 +59,24 @@ const SingleProduct = () => {
                 {/* quantity selector */}
                 <div className="flex items-center gap-4">
                   <label htmlFor="" className="text-sm font-medium text-gray-700 " > Quantity: </label>
-                  <input type="number" min={1} className="w-20 border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-red-500 " />
+                  <input type="number" min={1} className="w-20 border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-red-500" />
                 </div>
 
                 <div>
-                  <button></button>
+                  <button className=" px-3 flex items-center gap-2 py-2 text-lg bg-red-500 text-white rounded-md  "><IoCartOutline className="w-6 h-6"/>Add to Cart</button>
                 </div>
                 
 
                <div className="flex gap-2">
-               {singleProduct.size.map((s, index) => (
-               < button key={index} onClick={()=>setSelectedSize(s)} className={`px-3 py-1 rounded-md border transition ${selectedSize === s ? "bg-red-700 text-white border-red-500" : "bg-white text-gray-400 hover:bg-red-500"} `}   >
+               {singleProduct.size.map((s,index) => (
+               < button key={index} onClick={()=>setSelectedSize(s)} className={`px-4 py-2 rounded-md border transition ${selectedSize === s ? "bg-red-700 text-white border-red-500" : "bg-white text-gray-400 hover:bg-red-500"}`}>
                {s}
               </button>
                ))}
               {selectedSize && (
                 <p className="mt-3 text-sm text-gray-600">
                Selected size: <span className="text-red-500 font-semibold">{selectedSize}</span>
-              </p>
+                </p>
                 )}
             </div>
           </div>
