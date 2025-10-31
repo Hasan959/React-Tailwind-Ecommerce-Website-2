@@ -49,10 +49,22 @@ const SingleProduct = () => {
                  {/* product details */}
                 <div className="flex flex-col gap-6">
                 <h1 className=" md:text-3xl font-bold text-gray-800"> {singleProduct.title} </h1>
-                <div className="text-gray-700"> {singleProduct.brand?.toUpperCase() } / {singleProduct.category?.toUpperCase()} / {singleProduct.size.join(",")} 
+                <div className="text-gray-700"> {singleProduct.brand?.toUpperCase() }/ <span className="text-red-600">{singleProduct.category?.toUpperCase()}</span> {singleProduct.size.join(",")} 
                 </div>
                 <p className="text-xl text-red-500 font-bold"> ${singleProduct.price}  </p>
-                <p> {singleProduct.description} </p>
+                <p className="text-gray-600"> {singleProduct.description} </p>
+                
+
+                {/* quantity selector */}
+                <div className="flex items-center gap-4">
+                  <label htmlFor="" className="text-sm font-medium text-gray-700 " > Quantity: </label>
+                  <input type="number" min={1} className="w-20 border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-red-500 " />
+                </div>
+
+                <div>
+                  <button></button>
+                </div>
+                
 
                <div className="flex gap-2">
                {singleProduct.size.map((s, index) => (
