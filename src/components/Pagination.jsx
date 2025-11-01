@@ -34,7 +34,7 @@ const Pagination = ({page, pageHandler,dynamicPage}) => {
                   {item}
               </span>
             )
-          } )
+          })
         }
         <button disabled={page===dynamicPage} className={`${page===dynamicPage ? "bg-red-400": "bg-red-600" } text-white px-3 py-1 rounded-md cursor-pointer `} onClick={()=>pageHandler(page+1)} > Next </button>
     </div>

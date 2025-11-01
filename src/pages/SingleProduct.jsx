@@ -59,7 +59,7 @@ const SingleProduct = () => {
                 {/* quantity selector */}
                 <div className="flex items-center gap-4">
                   <label htmlFor="" className="text-sm font-medium text-gray-700 " > Quantity: </label>
-                  <input type="number" min={1} className="w-20 border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-red-500" />
+                  <input type="number" min={1} value={1} className="w-20 border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-red-500" />
                 </div>
 
                 <div>
