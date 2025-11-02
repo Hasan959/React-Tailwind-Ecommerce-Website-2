@@ -3,7 +3,7 @@ import { IoCartOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router';
 import { usecart } from '../context/CartContext';
 
-
+//distructure from products.jsx
 const ProductCard = ({product}) => {
   const navigate = useNavigate()
   const {addToCart,cartItem} = usecart()
