@@ -40,6 +40,14 @@ const App = () => {
   useEffect(()=>{
     getLocation()
   },[])
+  
+  useEffect(() => {
+  if (location) {
+    console.log(" Current location:", location);
+  }
+},[location]);
+
+
 //Routing path setting
   return (
     <BrowserRouter>
@@ -50,7 +58,7 @@ const App = () => {
         <Route path='/products/:id' element={<SingleProduct/>}></Route>
         <Route path='/about'element={<About/>}></Route>
         <Route path='/contact'element={<Contact/>}></Route>
-        <Route path='/cart'element={<Cart/>}></Route>
+        <Route path='/cart'element={<Cart location={location} getLocation={getLocation} />}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>
