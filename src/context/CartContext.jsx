@@ -4,7 +4,7 @@ export const CartContext = createContext(null)
 
 export const CartProvider = ({children}) => {
     const [cartItem, setCartItem] = useState([])
-    //product from productCard.jsx
+    // receved product from productCard.jsx
     const addToCart = (product)=>{
         const itemInCart = cartItem.find((item)=> item._id === product._id)
         if(itemInCart){
