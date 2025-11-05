@@ -7,7 +7,7 @@ import { GiShoppingBag } from 'react-icons/gi'
 import { useUser } from '@clerk/clerk-react'
 //cart section
 const Cart = ({location, getlocation}) => {
-  const {cartItem, updateQuantity } = usecart()
+  const {cartItem, updateQuantity,deleteItem } = usecart()
   //console.log(cartItem)
   const {user} = useUser()
   console.log(user)
@@ -36,7 +36,7 @@ const Cart = ({location, getlocation}) => {
                       <button onClick={()=>updateQuantity( cartItem, item._id,"increase")} className='cursor-pointer'> + </button>
                     </div>
 
-                   <span className=' hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl'>
+                   <span onClick={()=> deleteItem(item._id)} className=' hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl'>
                       <FaRegTrashAlt className='text-red-500 text-2xl cursor-pointer ' />
                   </span>
                   </div>

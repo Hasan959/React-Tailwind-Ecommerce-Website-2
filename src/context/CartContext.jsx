@@ -35,7 +35,11 @@ export const CartProvider = ({children}) => {
         }).filter(item => item != null ) // remove item quantuty 0
         )
     }
-    return <CartContext.Provider value={{ cartItem, setCartItem, addToCart, updateQuantity }}>
+
+    const deleteItem = (productId) => {
+        setCartItem(cartItem.filter(item => item._id !== productId ))
+    }
+    return <CartContext.Provider value={{ cartItem, setCartItem, addToCart, updateQuantity ,deleteItem }}>
         {children}
     </CartContext.Provider>
 
