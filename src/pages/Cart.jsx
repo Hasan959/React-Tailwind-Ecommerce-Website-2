@@ -5,6 +5,8 @@ import { LuNotebookText } from 'react-icons/lu'
 import { MdDeliveryDining } from 'react-icons/md'
 import { GiShoppingBag } from 'react-icons/gi'
 import { useUser } from '@clerk/clerk-react'
+import emptyCart from "../assets/empty-cart.png"
+
 //cart section
 const Cart = ({location, getlocation}) => {
   const {cartItem, updateQuantity,deleteItem } = usecart()
@@ -129,7 +131,11 @@ const Cart = ({location, getlocation}) => {
             </div>
             
         </div>
-          </div> : <div> cart is Empty </div>
+          </div> : <div className='flex flex-col gap-3 justify-center items-center  h-[600px] '> 
+            <h1 className='text-red-500/80 font-bold text-5xl text-muted '> Oh no! Your cart is Empty </h1> 
+            <img src={emptyCart} alt="" className='w-[400px]' />
+            <button> Continue Shopping </button>
+            </div>
           
       }
     </div>
