@@ -6,6 +6,7 @@ import { MdDeliveryDining } from 'react-icons/md'
 import { GiShoppingBag } from 'react-icons/gi'
 import { useUser } from '@clerk/clerk-react'
 import emptyCart from "../assets/empty-cart.png"
+import { useNavigate } from 'react-router'
 
 //cart section
 const Cart = ({location, getlocation}) => {
@@ -13,6 +14,9 @@ const Cart = ({location, getlocation}) => {
   //console.log(cartItem)
   const {user} = useUser()
   console.log(user)
+  const navigate = useNavigate()
+
+
   const totalPrice = cartItem.reduce((total, item)=> total + item.price, 0)
   return (
     <div  className='mt-10 max-w-6xl mx-auto mb-5 '>
@@ -134,7 +138,7 @@ const Cart = ({location, getlocation}) => {
           </div> : <div className='flex flex-col gap-3 justify-center items-center  h-[600px] '> 
             <h1 className='text-red-500/80 font-bold text-5xl text-muted '> Oh no! Your cart is Empty </h1> 
             <img src={emptyCart} alt="" className='w-[400px]' />
-            <button> Continue Shopping </button>
+            <button onClick={()=> navigate('/products') } className='bg-red-500 text-white px-3 py-2 rounded-md cursor-pointer '> Continue Shopping </button>
             </div>
           
       }
