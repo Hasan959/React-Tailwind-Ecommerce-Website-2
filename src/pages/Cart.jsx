@@ -127,7 +127,7 @@ const Cart = ({location, getlocation}) => {
                     </div>
                    </div>
 
-                   <button className='bg-red-500 text-white px-3 py-2 rounded-md w-full cursor-pointer mt-3'> Proceed to Checkout </button>
+                   <button className='bg-red-500 text-white px-3 py-2 rounded-md w-full cursor-pointer mt-3'> Proceed to Checkout  </button>
 
 
                </div>

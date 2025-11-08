@@ -7,11 +7,17 @@ import { useParams } from "react-router";
 import Loading from "../assets/Loading4.webm"
 import Breadcrums from "../components/Breadcrums";
 import { IoCartOutline } from "react-icons/io5";
+import { usecart } from "../context/CartContext";
+
+
+
 
 const SingleProduct = () => {
   const { id } = useParams(); // URL থেকে id নিচ্ছি
-  const [singleProduct, setSingleProduct] = useState(null);
+  const [singleProduct, setSingleProduct] = useState("");
   const [selectedSize, setSelectedSize]= useState(null)
+  const {addToCart} = usecart()
+  
 
   const getSingleProduct = async () => {
     try {
@@ -63,7 +69,7 @@ const SingleProduct = () => {
                 </div>
 
                 <div>
-                  <button className=" px-3 flex items-center gap-2 py-2 text-lg bg-red-500 text-white rounded-md  "><IoCartOutline className="w-6 h-6"/>Add to Cart</button>
+                  <button onClick={()=> addToCart(singleProduct)  } className=" px-3 flex items-center gap-2 py-2 text-lg bg-red-500 text-white rounded-md  "><IoCartOutline className="w-6 h-6"/>Add to Cart</button>
                 </div>
                 
 

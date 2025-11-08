@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const CartContext = createContext(null)
 
@@ -12,9 +13,11 @@ export const CartProvider = ({children}) => {
             const updatedCart = cartItem.map((item)=>
             item._id === product._id ? {...item, quantity: item.quantity + 1} : item)
             setCartItem(updatedCart)
+            toast.success("product quantity increased!")
         } else {
             //Add new item with quantity
              setCartItem([...cartItem,{...product, quantity: 1}])
+             toast.success("Product is added to cart!")
         }
        
         //console.log(cartItem)
