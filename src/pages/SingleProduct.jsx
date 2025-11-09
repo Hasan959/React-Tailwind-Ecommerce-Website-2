@@ -1,6 +1,4 @@
 
-
-
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -29,7 +27,7 @@ const SingleProduct = () => {
       // এখন সেই id অনুযায়ী প্রোডাক্ট খুঁজে বের করি
       const product = allProducts.find((item) => item._id === Number(id));
 
-      console.log("Matched Product:", product); //  এখানে তুমি পুরো details দেখবে
+      console.log("Matched Product:", product); 
       setSingleProduct(product);
     } catch (error) {
       console.log(error);

@@ -13,7 +13,7 @@ export const CartProvider = ({children}) => {
             const updatedCart = cartItem.map((item)=>
             item._id === product._id ? {...item, quantity: item.quantity + 1} : item)
             setCartItem(updatedCart)
-            toast.success("product quantity increased!")
+            toast.success("Product quantity increased!")
         } else {
             //Add new item with quantity
              setCartItem([...cartItem,{...product, quantity: 1}])
@@ -29,8 +29,10 @@ export const CartProvider = ({children}) => {
                 let newUnit = item.quantity;
                 if(action === "increase"){
                     newUnit= newUnit+1
+                    toast.success("Quantity is Increased!")
                 } else if (action ==="decrease"){
                     newUnit = newUnit - 1
+                    toast.success("Quantity is Decrease!")
                 }
                 return newUnit > 0 ? {...item, quantity: newUnit} : null
             }
@@ -40,7 +42,8 @@ export const CartProvider = ({children}) => {
     }
 
     const deleteItem = (productId) => {
-        setCartItem(cartItem.filter(item => item._id !== productId ))
+        setCartItem(cartItem.filter(item => item._id !== productId))
+        toast.success("Product is Delete from Cart!")
     }
     return <CartContext.Provider value={{ cartItem, setCartItem, addToCart, updateQuantity ,deleteItem }}>
         {children}

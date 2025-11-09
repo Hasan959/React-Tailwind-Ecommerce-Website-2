@@ -55,22 +55,22 @@ const Cart = ({location, getlocation}) => {
                   <h1 className='text-gray-800 font-bold text-xl'> Delivery Info </h1>
                   <div className='flex flex-col space-y-1'>
                     <label htmlFor=""> Full Name </label>
-                    <input type="text" placeholder='Enter Your name' className='p-2 rounded-md' value={user.fullName} readOnly/>
+                    <input type="text" placeholder='Enter Your Full Name' className='p-2 rounded-md' value={user?.fullName} readOnly/>
                   </div>
 
                   <div className='flex flex-col space-y-1'>
                     <label htmlFor=""> Address </label>
-                    <input type="text" placeholder='Enter Your Address' className='p-2 rounded-md' value={location.country} readOnly/>
+                    <input type="text" placeholder='Enter Your Address' className='p-2 rounded-md' value={location?.country} readOnly/>
                   </div>
 
                   <div className='flex w-full gap-5'>
                     <div className='flex flex-col space-y-1 w-full'>
                        <label htmlFor=""> State </label>
-                       <input type="text" placeholder='Enter Your State' className='p-2 rounded-md w-full' value={location.state} />
+                       <input type="text" placeholder='Enter Your State' className='p-2 rounded-md w-full' value={location?.state} />
                     </div>
                     <div className='flex flex-col space-y-1 w-full'>
                       <label htmlFor=""> District </label>
-                      <input type="text" placeholder='Enter Your District' className='p-2 rounded-md w-full' value={location.state_district} />
+                      <input type="text" placeholder='Enter Your District' className='p-2 rounded-md w-full' value={location?.state_district} />
                     </div>
                   </div>
 
