@@ -2,6 +2,7 @@ import React from 'react'
 import { getData } from '../context/DataContext'
 //FilterSection distructure from Products.jsx component
 const FilterSection = ({search, setSearch, category,setCategory, brand, setBrand, priceRange, setPriceRange,handleCategoryChange, handleBrandChange }) => {
+  //Distructure from DataContext.jsx
   const { categoryOnlyData,brandOnlyData} = getData()
   return (
     //search user input

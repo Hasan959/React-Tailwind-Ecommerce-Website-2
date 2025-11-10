@@ -6,6 +6,7 @@ import { usecart } from '../context/CartContext';
 //distructure from products.jsx
 const ProductCard = ({product}) => {
   const navigate = useNavigate()
+  //Distructure from CartContext.jsx
   const {addToCart,cartItem} = usecart()
 
   console.log(cartItem)

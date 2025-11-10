@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import Loading from "../assets/Loading4.webm"
 import { ChevronLeft } from 'lucide-react'
 import ProductListView from '../components/ProductListView'
@@ -9,6 +9,7 @@ const CategoryProduct = () => {
   const [searchData, setSearchData] = useState([])
   const [loading, setLoading] = useState(true)
   const { category } = useParams()
+  const navigate = useNavigate()
 
   const getFilterData = async () => {
     try {
@@ -17,12 +18,22 @@ const CategoryProduct = () => {
       console.log("API Response:", res.data)
 
       // প্রথমে সব প্রোডাক্ট নাও
-      const allProducts = res.data.data
+      const allProducts = res.data.data  
 
-      //  তারপর category দিয়ে ফিল্টার 
-      const filtered = allProducts.filter(
-        (item) => item.category.toLowerCase() === category.toLowerCase()
-      )
+      if(category.toLowerCase() === "all"){
+        setSearchData(allProducts)
+      }
+      else{
+        const filtered = allProducts.filter(
+          (item)=>item.category.toLowerCase() === category.toLowerCase()
+        )
+        setSearchData(filtered)
+      }
+
+      
+      // const filtered = allProducts.filter(
+      //   (item) => item.category.toLowerCase() === category.toLowerCase()
+      // )
 
       setSearchData(filtered)
     } catch (error) {
@@ -46,8 +57,8 @@ const CategoryProduct = () => {
 
   return (
     <div className="max-w-6xl mx-auto mt-10 mb-10 px-4">
-      <button className="bg-gray-800 mb-5 text-white px-3 py-1 rounded-md cursor-pointer flex gap-1 items-center">
-        <ChevronLeft /> Back
+      <button onClick={()=>navigate('/')} className="bg-gray-800 mb-5 text-white px-3 py-1 rounded-md cursor-pointer flex gap-1 items-center">
+        <ChevronLeft/> Back
       </button>
 
       {Array.isArray(searchData) && searchData.length > 0 ? (
