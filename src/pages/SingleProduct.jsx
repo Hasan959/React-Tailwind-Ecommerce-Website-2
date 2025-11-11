@@ -47,13 +47,13 @@ const SingleProduct = () => {
     {
     singleProduct ? <div className="px-4 pb-4  md:px-0 ">
          <Breadcrums title= {singleProduct.title} />
-        <div className="max-w-6xl mx-auto md:p-6 grid grid-cols-2 gap-10 ">
+        <div className="max-w-6xl mx-auto md:p-6 grid grid-cols-1 md:grid-cols-2 gap-10 ">
                   {/* product image */}
-                 <div className="w-full flex gap-12">
+                 <div className="w-full  ">
                  <img src={singleProduct.image} alt={singleProduct.title} className="rounded-2xl w-full object-cover " />
                  {/* product details */}
                 <div className="flex flex-col gap-6">
-                <h1 className=" md:text-3xl font-bold text-gray-800"> {singleProduct.title} </h1>
+                <h1 className=" md:text-3xl text-xl font-bold text-gray-800"> {singleProduct.title} </h1>
                 <div className="text-gray-700"> {singleProduct.brand?.toUpperCase() }/ <span className="text-red-600">{singleProduct.category?.toUpperCase()}</span> {singleProduct.size.join(",")} 
                 </div>
                 <p className="text-xl text-red-500 font-bold"> ${singleProduct.price}  </p>

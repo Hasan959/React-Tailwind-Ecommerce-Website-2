@@ -5,11 +5,11 @@ import Features from '../components/Features'
 //Home page for components routes
 const Home = () => {
   return (
-    <>
+    <div className=' min-h-screen w-full  overflow-x-hidden'>
        <Carousel/>
        <MidBanner/>
        <Features/>
-    </>
+    </div>
   )
 }
 
