@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import { getData } from '../context/DataContext'
 import FilterSection from '../components/FilterSection'
 import Loading from "../assets/Loading4.webm"
@@ -6,6 +6,7 @@ import ProductCard from '../components/ProductCard'
 import Pagination from '../components/Pagination'
 import Lottie from 'lottie-react'
 import notfound from "../assets/notfound.json"
+import MobileFilter from '../components/MobileFilter'
 
 
 
@@ -17,6 +18,7 @@ const Products = () => {
   const [brand, setBrand] = useState("All")
   const [priceRange, setPriceRange] = useState([0,1000])
   const [page, setPage] = useState(1)
+  const [openFilter, setOpenFilter] = useState(false)
   
   useEffect(()=>{
     fetchAllProducts()
@@ -48,10 +50,11 @@ const Products = () => {
   return (
     <div>
       <div className='max-w-6xl mx-auto px-4 mb-10'>
+        <MobileFilter openFilter={openFilter} setOpenFilter={setOpenFilter} search={search} setSearch ={setSearch} category={category} setCategory={setCategory} brand={brand} setBrand={setBrand} priceRange={priceRange} setPriceRange={setPriceRange} handleCategoryChange={handleCategoryChange} handleBrandChange={handleBrandChange} />
         {
           data?.length > 0 ? (
             <>
-            
+
             <div className='flex gap-8'>
               <FilterSection search={search} setSearch ={setSearch} category={category} setCategory={setCategory} brand={brand} setBrand={setBrand} priceRange={priceRange} setPriceRange={setPriceRange} handleCategoryChange={handleCategoryChange} handleBrandChange={handleBrandChange}/>
 
