@@ -17,7 +17,7 @@ const ProductListView = ({product}) => {
              <h1 className='font-bold md:text-xl text-lg line-clamp-3 hover:text-red-400 md:w-full  '>{product.title}</h1>
              <p className='font-semibold  items-center md:text-lg text-sm '> <span className='md:text-4xl text-3xl'> ${product.price} </span> </p>
              <p className='text-sm'> FREE Delivery <span className='font-semibold'> Fri, 18 Apr </span>  <br/> Or Fastest Delivery <span className='font-bold'>Tomorrow,31 March</span> </p>
-             <button onClick={()=>addToCart(product)} className='bg-red-500 text-white px-3 py-1 rounded-md'> Add to Cart </button>
+             <button onClick={()=>addToCart(product)} className='bg-red-500 text-white px-3 py-1 rounded-md'> Add Cart </button>
           </div>
         </div>  
     </div>

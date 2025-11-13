@@ -67,7 +67,7 @@ const SingleProduct = () => {
                 </div>
 
                 <div>
-                  <button onClick={()=> addToCart(singleProduct)  } className=" px-3 flex items-center gap-2 py-2 text-lg bg-red-500 text-white rounded-md  "><IoCartOutline className="w-6 h-6"/>Add to Cart</button>
+                  <button onClick={()=> addToCart(singleProduct)  } className=" px-3 flex items-center gap-2 py-2 text-lg bg-red-500 text-white rounded-md  "><IoCartOutline className="w-6 h-6"/>Add Cart</button>
                 </div>
                 
 

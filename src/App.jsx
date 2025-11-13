@@ -11,11 +11,14 @@ import axios from 'axios'
 import Footer from './components/Footer'
 import SingleProduct from './pages/SingleProduct'
 import CategoryProduct from './pages/CategoryProduct'
+import { usecart } from './context/CartContext'
 
 
 const App = () => {
   const[location, setLocation] = useState()
   const [openDropdown,setOpenDropdown] = useState(false)
+  //cartItem,setCartItem Distructure from CartContext.jsx
+  const {cartItem, setCartItem} = usecart() 
 
 
   const getLocation = async ()=>{
@@ -41,7 +44,24 @@ const App = () => {
   useEffect(()=>{
     getLocation()
   },[])
+
+  //load cart from local storage
+  useEffect(()=> {
+     const storeCart = localStorage.getItem('cartItem')
+     if(storeCart){
+      setCartItem(JSON.parse(storeCart))
+     }
+  },[])
+
+  //save  cart to local storage
+  useEffect(()=> {
+    localStorage.setItem('cartItem' , JSON.stringify(cartItem))
+
+  },[cartItem])
   
+
+
+
   useEffect(() => {
   if (location) {
     console.log(" Current location:", location);
