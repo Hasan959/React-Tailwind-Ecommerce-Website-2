@@ -2,13 +2,19 @@ import React from 'react'
 import { FaFilter } from 'react-icons/fa'
 import { getData } from '../context/DataContext'
 
+//openFilter distructure from Products.jsx
+
 const MobileFilter = ({openFilter, setOpenFilter,search, setSearch, category,setCategory, brand, setBrand, priceRange, setPriceRange,handleCategoryChange, handleBrandChange}) => {
     const { categoryOnlyData,brandOnlyData} = getData()
+
+    const toggleFilter = ()=>{
+      setOpenFilter(!openFilter)
+    }
   return (
     <>
-       <div className='bg-gray-100 flex justify-between items-center md:hidden px-4 p-2 mt-5'> 
+       <div onClick={toggleFilter}  className='bg-gray-100 flex justify-between items-center md:hidden px-4 p-2 mt-5'> 
         <h1 className='font-semibold text-xl'>Filters</h1>
-        <FaFilter onClick={()=>setOpenFilter(true)} className='text-gray-800'/>
+        <FaFilter className='text-gray-800'/>
        </div>
        {
         openFilter ? <div className='bg-gray-100 p-2 md:hidden'>
@@ -43,6 +49,17 @@ const MobileFilter = ({openFilter, setOpenFilter,search, setSearch, category,set
             })
             }
         </select>
+        {/* price range */}
+        <h1 className='mt-5 font-semibold text-xl mb-3'> Price Range </h1>
+        <div>
+          <label htmlFor=""> Price Range: ${priceRange[0]} - ${priceRange[1]} </label>
+          <input type="range" min='0' max='1000' name='' id='' value={priceRange[1]} onChange={(e)=>setPriceRange([priceRange[0],Number(e.target.value )])} className='transition-all w-full' />
+          
+        </div>
+        
+        <button className='bg-red-500 text-white rounded-md px-3 py-1 mt-5 cursor-pointer'onClick={()=>{setSearch('');setCategory('All'); setBrand('All'); setPriceRange([0,1000]); setOpenFilter(false) } } > 
+
+          Reset Filters </button>
 
         </div> : null 
        }

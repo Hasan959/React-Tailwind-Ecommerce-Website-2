@@ -8,8 +8,9 @@ import { useUser } from '@clerk/clerk-react'
 import emptyCart from "../assets/empty-cart.png"
 import { useNavigate } from 'react-router'
 
-//cart section
+
 const Cart = ({location, getlocation}) => {
+  //updateQuantity distructure from CartContect.jsx
   const {cartItem, updateQuantity,deleteItem } = usecart()
   //console.log(cartItem)
   const {user} = useUser()
@@ -34,7 +35,7 @@ const Cart = ({location, getlocation}) => {
                           <h1 className='md:w-[300px] line-clamp-2'> {item.title} </h1>
                           <p className='text-red-500 font-semibold text-lg'> ${item.price} </p>
                       </div>
-                      <div className='bg-red-500 text-white flex gap-4 p-2 rounded-md font-bold text-xl'>
+                      <div className='bg-red-500 text-white flex gap-4 p-2 rounded-md font-bold md:text-xl text-sm z-50 '>
                           <button onClick={()=>updateQuantity(cartItem, item._id,"decrease")}   className='cursor-pointer'> - </button>
                           <span> {item.quantity} </span>
                            <button onClick={()=>updateQuantity( cartItem, item._id,"increase")} className='cursor-pointer'> + </button>

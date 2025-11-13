@@ -27,14 +27,19 @@ const Products = () => {
   const handleCategoryChange =(e)=> {
     setCategory(e.target.value)
     setPage(1)
+    setOpenFilter(false)
+
     //console.log(category)
   }
   const handleBrandChange =(e)=> {
     setBrand(e.target.value)
     setPage(1)
+    setOpenFilter(false)
+
   }
   const pageHandler = (selectedPage)=> {
     setPage(selectedPage)
+    window.scrollTo(0,0)
   }
 
   
