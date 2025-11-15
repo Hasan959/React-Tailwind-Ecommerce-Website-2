@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import SingleProduct from './pages/SingleProduct'
 import CategoryProduct from './pages/CategoryProduct'
 import { usecart } from './context/CartContext'
+import { ProtectedRoute } from './components/ProtectedRoute'
 
 
 const App = () => {
@@ -80,7 +81,7 @@ const App = () => {
         <Route path='/category/:category'element={<CategoryProduct/>}> </Route>
         <Route path='/about'element={<About/>}></Route>
         <Route path='/contact'element={<Contact/>}></Route>
-        <Route path='/cart'element={<Cart location={location} getLocation={getLocation} />}></Route>
+        <Route path='/cart'element={ <ProtectedRoute><Cart location={location} getLocation={getLocation}/></ProtectedRoute>}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>
