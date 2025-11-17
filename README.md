@@ -8,7 +8,7 @@
 > Search | Add to Cart | Animations | Mobile-Friendly — **All Live!**
 </div>
 
-[![React](https://img.shields.io/badge/React-18.2.0-brightgreen)](https://reactjs.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3.0-blue)](https://tailwindcss.com/) [![Vite](https://img.shields.io/badge/Vite-5.0.0-orange)](https://vitejs.dev/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-19.2-brightgreen)](https://reactjs.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v4.1-blue)](https://tailwindcss.com/) [![Vite](https://img.shields.io/badge/Vite-v7.2.2-orange)](https://vitejs.dev/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A modern, responsive e-commerce website built with React and Tailwind CSS. This project showcases a complete shopping experience with product listings, cart functionality, search, filters, and smooth animations. It's designed for performance and mobile-first responsiveness, perfect for learning or as a starter template.
 
