@@ -8,7 +8,7 @@
 > Search | Add to Cart | Animations | Mobile-Friendly — **All Live!**
 </div>
 
-[![React](https://img.shields.io/badge/React-19.2-brightgreen)](https://reactjs.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v4.1-blue)](https://tailwindcss.com/) [![Vite](https://img.shields.io/badge/Vite-v7.2.2-orange)](https://vitejs.dev/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-19.2-brightgreen)](https://reactjs.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v4.1-blue)](https://tailwindcss.com/) [![Vite](https://img.shields.io/badge/Vite-v7.2.2-orange)](https://vitejs.dev/) 
 
 A modern, responsive e-commerce website built with React and Tailwind CSS. This project showcases a complete shopping experience with product listings, cart functionality, search, filters, and smooth animations. It's designed for performance and mobile-first responsiveness, perfect for learning or as a starter template.
 
@@ -145,14 +145,11 @@ module.exports = {
 4. Push: `git push origin feature/add-filter`.
 5. Open a Pull Request.
 
-## 📄 License
+## Contact & Social
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- **Developer:** Hasan Mahmud  
+- **GitHub:** [@Hasan959](https://github.com/Hasan959)  
+- **LinkedIn:** [![LinkedIn](https://img.shields.io/badge/Connect%20on%20LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hasan-mahmud-14abb8170/)  
+- **Email:** hasanmahmud.biddut@gmail.com  
+- **Live Demo:** [Live Site](https://react-tailwind-ecommerce-website-2.vercel.app/)  
 
-## 📞 Contact
-
-- **Author:** Hasan959  
-- **GitHub:** [Hasan959](https://github.com/Hasan959)  
-- **Email:** hasanmahmud.biddut@gmail.com)  
-
----
