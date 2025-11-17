@@ -1,7 +1,6 @@
-import { UserButton, useUser } from '@clerk/clerk-react'
-import React from 'react'
+import { SignInButton, UserButton, useUser } from '@clerk/clerk-react'
 import { FaUserCircle } from 'react-icons/fa'
-import { Link, NavLink } from 'react-router'
+import { Link,} from 'react-router'
 
 const ResponsiveMenu = ({openNav,setOpenNav}) => {
     const {user} = useUser()
@@ -11,13 +10,18 @@ const ResponsiveMenu = ({openNav,setOpenNav}) => {
         rounded-r-xl shadow-md  transition-all `}>
             <div>
                 <div className='flex items-center justify-start gap-3'>
-                    {
-                        user ? <UserButton size={50}/> : <FaUserCircle size={50}/>
-                    } 
-                    <div>
-                        <h1> Hellow,{user?.firstName} </h1>
-                        <h1 className='text-sm text-slate-500'> Premium User </h1>
+             {
+                        user ? <UserButton size={50}/> : <SignInButton>
+                    <div className="flex items-center justify-start gap-3 cursor-pointer">
+                   <FaUserCircle size={50} />
+                   <div>
+                      <h1>Hello, Guest</h1>
+                      <h1 className="text-sm text-slate-500">Premium User</h1>
                     </div>
+                  </div>
+               </SignInButton>
+             } 
+                    
                 </div>
                 <nav className='mt-12'>
                     <ul className='flex flex-col gap-7 text-2xl font-semibold '>

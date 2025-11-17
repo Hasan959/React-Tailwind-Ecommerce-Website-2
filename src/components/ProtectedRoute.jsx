@@ -7,6 +7,9 @@ export const ProtectedRoute = ({children}) => {
   return (
     <div>
         {user ? children: <Navigate to='/'/> }
+
     </div>
   )
 }
+
+

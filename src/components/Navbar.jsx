@@ -58,9 +58,9 @@ const Navbar = ({location,getLocation,openDropdown,setOpenDropdown}) => {
             <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white' >
               {cartItem.length} </span>
           </Link>
-          <div className='hidden md:block'>
+          <div className='hidden md:block sm:pr-3  '>
             <SignedOut>
-                 <SignInButton className="bg-red-500 text-white px-3 py-1 rounded-md cursor-pointer" />
+                 <SignInButton className="bg-red-500 text-white px-3 py-1 rounded-md cursor-pointer whitespace-nowrap" />
             </SignedOut>
 
             <SignedIn>
