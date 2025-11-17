@@ -1,3 +1,4 @@
+- # 🌟 Live Demo: Live Site 🌟  (https://react-tailwind-ecommerce-website-2.vercel.app/) 
 # React + Tailwind CSS E-Commerce Website
 
 [![React](https://img.shields.io/badge/React-18.2.0-brightgreen)](https://reactjs.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3.0-blue)](https://tailwindcss.com/) [![Vite](https://img.shields.io/badge/Vite-5.0.0-orange)](https://vitejs.dev/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -146,6 +147,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Author:** Hasan959  
 - **GitHub:** [Hasan959](https://github.com/Hasan959)  
 - **Email:** hasanmahmud.biddut@gmail.com)  
-- **Demo:** [Live Site](https://your-deployed-site.vercel.app) (replace with actual link)
 
 ---
