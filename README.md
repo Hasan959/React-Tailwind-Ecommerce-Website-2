@@ -110,22 +110,58 @@ src/
 ├── index.css               # Global Styles
 └── main.jsx                # Entry Point
 ```
-
+  
 ## 🎨 Customization Guide
-
 ### Tailwind Config
-```js
+``` js
 // tailwind.config.js
 module.exports = {
   theme: {
     extend: {
-      colors: {
+      colours: {
         primary: '#EF4444',  // Red for buttons
       },
     },
   },
 };
 ```
+
+##  Dependencies Use
+
+"dependencies": {
+    "@clerk/clerk-react": "^5.49.1",
+    "@tailwindcss/vite": "^4.1.13",
+    "axios": "^1.12.2",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.544.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-router": "^7.9.4",
+    "react-scroll-to-top": "^3.1.0",
+    "react-slick": "^0.31.0",
+    "react-toastify": "^11.0.5",
+    "slick-carousel": "^1.8.1",
+    "tailwindcss": "^4.1.13"
+  },
+
+
+
+
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.3",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "vite": "^7.1.7"
+  }
+
+
+
 
 ### Adding New Components
 1. Create `src/components/NewComponent.jsx`.
