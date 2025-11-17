@@ -30,9 +30,9 @@ A modern, responsive e-commerce website built with React and Tailwind CSS. This 
 | Technology | Version | Purpose |
 |------------|---------|---------|
 | React | 18.2.0 | UI Framework |
-| Tailwind CSS | 3.3.0 | Styling & Utility Classes |
-| React Router | 6.8.0 | Navigation |
-| Axios | 1.4.0 | API Requests |
+| Tailwind CSS | v4.1 | Styling & Utility Classes |
+| React Router | 7.9.6 | Navigation |
+| Axios | 1.13.2 | API Requests |
 | Vite | 5.0.0 | Build Tool |
 
 ## 📦 Installation
