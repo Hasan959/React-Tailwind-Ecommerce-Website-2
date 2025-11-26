@@ -54,7 +54,7 @@ const Products = () => {
 
   return (
     <div>
-      <div className='max-w-6xl mx-auto px-4 mb-10'>
+      <div className='max-w-6xl mx-auto py-7 px-4 mb-10'>
         <MobileFilter openFilter={openFilter} setOpenFilter={setOpenFilter} search={search} setSearch ={setSearch} category={category} setCategory={setCategory} brand={brand} setBrand={setBrand} priceRange={priceRange} setPriceRange={setPriceRange} handleCategoryChange={handleCategoryChange} handleBrandChange={handleBrandChange} />
         {
           data?.length > 0 ? (
